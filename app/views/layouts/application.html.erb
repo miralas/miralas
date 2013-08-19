@@ -6,11 +6,26 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%= link_to "home", home_path %>
-<%= link_to "users", users_path %>
-
-<%= yield %>
-
+<body id="<%= controller.controller_name %>">
+  <div id="banner">
+    <% image_tag("logo.png") %>
+    <%= @page_title || t('.title') %>
+  </div>
+  <div id="columns">
+    <div id="side"> 
+      <ul>
+        <li><%= link_to_unless_current t('.home_page'), home_path %></li>
+        <li><%= link_to_unless_current t('.users_page'), users_path %></li>
+      </ul>
+    </div>
+    <div id="main"> 
+    
+      <%= yield %>
+    
+    </div>
+    <div id="footer">
+      <%= t '.сopyright' %>
+    </div>
+  </div>
 </body>
 </html>

@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    application:
+      сopyright: 2013 Mike Zagorulko
